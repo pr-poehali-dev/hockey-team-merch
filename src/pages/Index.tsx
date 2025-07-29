@@ -24,12 +24,12 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white text-gray-800">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-team-green/10 via-white to-primary/10">
+        <div className="absolute inset-0 bg-white/80 z-10"></div>
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center opacity-10"
           style={{ backgroundImage: `url('/img/6071e1ff-5bcc-49df-8762-f1b33eaf2533.jpg')` }}
         ></div>
         
@@ -38,15 +38,15 @@ const Index = () => {
             ХК ГАЗОВИК
             <span className="block text-primary font-oswald">ТЮМЕНЬ</span>
           </h1>
-          <p className="font-roboto text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
+          <p className="font-roboto text-xl md:text-2xl mb-8 text-gray-600 max-w-2xl mx-auto">
             Официальный сайт ХК Газовик Тюмень. Следите за матчами, статистикой игроков и приобретайте оригинальную форму
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-oswald text-lg px-8 py-3">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-black font-oswald text-lg px-8 py-3">
               <Icon name="ShoppingCart" className="mr-2" size={20} />
               КУПИТЬ ФОРМУ
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black font-oswald text-lg px-8 py-3">
+            <Button size="lg" variant="outline" className="border-team-green text-team-green hover:bg-team-green hover:text-gray-800 font-oswald text-lg px-8 py-3">
               <Icon name="Calendar" className="mr-2" size={20} />
               РАСПИСАНИЕ
             </Button>
@@ -55,16 +55,16 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 px-6 bg-gray-900">
+      <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-center mb-12">
             СТАТИСТИКА ИГРОКОВ
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {playerStats.map((player, index) => (
-              <Card key={index} className="bg-black/50 border-team-green/20 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+              <Card key={index} className="bg-white shadow-lg border-gray-200 hover:border-primary/50 transition-all duration-300 hover:scale-105">
                 <CardHeader className="pb-3">
-                  <CardTitle className="font-oswald text-lg text-white">{player.name}</CardTitle>
+                  <CardTitle className="font-oswald text-lg text-gray-800">{player.name}</CardTitle>
                   <Badge variant="secondary" className="w-fit bg-primary/20 text-primary border-none">
                     {player.position}
                   </Badge>
@@ -73,30 +73,30 @@ const Index = () => {
                   {player.position === "Вратарь" ? (
                     <>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Сейвы:</span>
+                        <span className="text-gray-600">Сейвы:</span>
                         <span className="font-bold text-primary">{player.saves}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Победы:</span>
+                        <span className="text-gray-600">Победы:</span>
                         <span className="font-bold text-primary">{player.wins}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">%:</span>
+                        <span className="text-gray-600">%:</span>
                         <span className="font-bold text-primary">{player.percentage}%</span>
                       </div>
                     </>
                   ) : (
                     <>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Голы:</span>
+                        <span className="text-gray-600">Голы:</span>
                         <span className="font-bold text-primary">{player.goals}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Передачи:</span>
+                        <span className="text-gray-600">Передачи:</span>
                         <span className="font-bold text-primary">{player.assists}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-400">Очки:</span>
+                        <span className="text-gray-600">Очки:</span>
                         <span className="font-bold text-primary">{player.points}</span>
                       </div>
                     </>
@@ -109,31 +109,31 @@ const Index = () => {
       </section>
 
       {/* Schedule Section */}
-      <section className="py-20 px-6 bg-black">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-center mb-12">
             БЛИЖАЙШИЕ МАТЧИ
           </h2>
           <div className="space-y-4">
             {upcomingGames.map((game, index) => (
-              <Card key={index} className="bg-gray-900 border-team-green/20 hover:border-primary/50 transition-all duration-300">
+              <Card key={index} className="bg-gray-50 border-gray-200 hover:border-primary/50 transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
                       <div className="text-center">
                         <div className="font-oswald text-2xl font-bold text-primary">{game.date}</div>
-                        <div className="text-sm text-gray-400">{game.time}</div>
+                        <div className="text-sm text-gray-600">{game.time}</div>
                       </div>
                       <div className="h-12 w-px bg-team-green/30"></div>
                       <div>
                         <div className="font-oswald text-xl font-bold">vs {game.opponent}</div>
-                        <div className="flex items-center gap-2 text-sm text-gray-400">
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
                           <Icon name={game.home ? "Home" : "MapPin"} size={16} />
                           {game.home ? "Домашний матч" : "Выездной матч"}
                         </div>
                       </div>
                     </div>
-                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-gray-800">
                       <Icon name="Ticket" className="mr-2" size={16} />
                       Билеты
                     </Button>
@@ -151,13 +151,13 @@ const Index = () => {
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-center mb-4">
             МАГАЗИН ФОРМЫ
           </h2>
-          <p className="text-center text-gray-400 mb-12 font-roboto text-lg">
+          <p className="text-center text-gray-600 mb-12 font-roboto text-lg">
             Официальная игровая форма команды
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {jerseys.map((jersey, index) => (
-              <Card key={index} className="bg-black/50 border-team-green/20 overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105">
-                <div className="aspect-square bg-gray-800 relative overflow-hidden">
+              <Card key={index} className="bg-white shadow-lg border-gray-200 overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                <div className="aspect-square bg-gray-100 relative overflow-hidden">
                   <img 
                     src={jersey.image} 
                     alt={jersey.name}
@@ -168,7 +168,7 @@ const Index = () => {
                   <h3 className="font-oswald text-xl font-bold mb-2">{jersey.name}</h3>
                   <div className="flex items-center justify-between">
                     <span className="font-oswald text-2xl font-bold text-primary">{jersey.price}</span>
-                    <Button className="bg-primary hover:bg-primary/90 text-white">
+                    <Button className="bg-primary hover:bg-primary/90 text-gray-800">
                       <Icon name="ShoppingCart" className="mr-2" size={16} />
                       В корзину
                     </Button>
@@ -181,17 +181,17 @@ const Index = () => {
       </section>
 
       {/* News Section */}
-      <section className="py-20 px-6 bg-gray-900">
+      <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold text-center mb-12">
             ПОСЛЕДНИЕ НОВОСТИ
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-black/50 border-team-green/20 hover:border-primary/50 transition-all duration-300">
+            <Card className="bg-white shadow-lg border-gray-200 hover:border-primary/50 transition-all duration-300">
               <CardContent className="p-6">
                 <Badge className="mb-3 bg-primary/20 text-primary border-none">Победа</Badge>
                 <h3 className="font-oswald text-xl font-bold mb-3">Разгромная победа над Торпедо 5:1</h3>
-                <p className="text-gray-400 mb-4 font-roboto">Команда показала отличную игру в нападении и надежную защиту...</p>
+                <p className="text-gray-600 mb-4 font-roboto">Команда показала отличную игру в нападении и надежную защиту...</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">12 августа 2024</span>
                   <Button variant="ghost" className="text-primary hover:text-primary/80">
@@ -202,11 +202,11 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-black/50 border-team-green/20 hover:border-primary/50 transition-all duration-300">
+            <Card className="bg-white shadow-lg border-gray-200 hover:border-primary/50 transition-all duration-300">
               <CardContent className="p-6">
                 <Badge className="mb-3 bg-blue-500/20 text-blue-400 border-none">Трансфер</Badge>
                 <h3 className="font-oswald text-xl font-bold mb-3">Подписан новый нападающий</h3>
-                <p className="text-gray-400 mb-4 font-roboto">В команду перешел опытный форвард из КХЛ, который усилит атакующую линию...</p>
+                <p className="text-gray-600 mb-4 font-roboto">В команду перешел опытный форвард из КХЛ, который усилит атакующую линию...</p>
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-gray-500">10 августа 2024</span>
                   <Button variant="ghost" className="text-primary hover:text-primary/80">
@@ -221,7 +221,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-6 bg-black">
+      <section className="py-20 px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-oswald text-4xl md:text-5xl font-bold mb-8">
             СВЯЗАТЬСЯ С НАМИ
@@ -230,21 +230,21 @@ const Index = () => {
             <div className="flex flex-col items-center">
               <Icon name="MapPin" size={32} className="text-primary mb-4" />
               <h3 className="font-oswald text-lg font-bold mb-2">АДРЕС</h3>
-              <p className="text-gray-400 font-roboto">Ледовая арена "Тюмень"<br />ул. Первомайская, 58</p>
+              <p className="text-gray-600 font-roboto">Ледовая арена "Тюмень"<br />ул. Первомайская, 58</p>
             </div>
             <div className="flex flex-col items-center">
               <Icon name="Phone" size={32} className="text-primary mb-4" />
               <h3 className="font-oswald text-lg font-bold mb-2">ТЕЛЕФОН</h3>
-              <p className="text-gray-400 font-roboto">+7 (3452) 45-67-89</p>
+              <p className="text-gray-600 font-roboto">+7 (3452) 45-67-89</p>
             </div>
             <div className="flex flex-col items-center">
               <Icon name="Mail" size={32} className="text-primary mb-4" />
               <h3 className="font-oswald text-lg font-bold mb-2">EMAIL</h3>
-              <p className="text-gray-400 font-roboto">info@gazoviktyumen.ru</p>
+              <p className="text-gray-600 font-roboto">info@gazoviktyumen.ru</p>
             </div>
           </div>
           <div className="flex justify-center gap-4">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-oswald">
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-gray-800 font-oswald">
               <Icon name="MessageCircle" className="mr-2" size={20} />
               НАПИСАТЬ НАМ
             </Button>
