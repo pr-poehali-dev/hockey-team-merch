@@ -62,9 +62,9 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				'team-red': '#FF0000',
-				'team-black': '#000000',
-				'team-silver': '#C0C0C0'
+				'team-gold': '#FFD700',
+				'team-green': '#228B22',
+				'team-dark-green': '#006400'
 			},
 			fontFamily: {
 				'oswald': ['Oswald', 'sans-serif'],

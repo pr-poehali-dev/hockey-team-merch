@@ -35,11 +35,11 @@ const Index = () => {
         
         <div className="relative z-20 text-center max-w-4xl mx-auto px-6">
           <h1 className="font-oswald text-6xl md:text-8xl font-bold mb-6 tracking-wider">
-            ЧЕМПИОНЫ
-            <span className="block text-primary font-oswald">ЛЬДА</span>
+            ХК ГАЗОВИК
+            <span className="block text-primary font-oswald">ТЮМЕНЬ</span>
           </h1>
           <p className="font-roboto text-xl md:text-2xl mb-8 text-gray-300 max-w-2xl mx-auto">
-            Официальный сайт хоккейной команды. Следите за матчами, статистикой игроков и приобретайте оригинальную форму
+            Официальный сайт ХК Газовик Тюмень. Следите за матчами, статистикой игроков и приобретайте оригинальную форму
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-oswald text-lg px-8 py-3">
@@ -62,7 +62,7 @@ const Index = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {playerStats.map((player, index) => (
-              <Card key={index} className="bg-black/50 border-team-silver/20 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+              <Card key={index} className="bg-black/50 border-team-green/20 hover:border-primary/50 transition-all duration-300 hover:scale-105">
                 <CardHeader className="pb-3">
                   <CardTitle className="font-oswald text-lg text-white">{player.name}</CardTitle>
                   <Badge variant="secondary" className="w-fit bg-primary/20 text-primary border-none">
@@ -116,7 +116,7 @@ const Index = () => {
           </h2>
           <div className="space-y-4">
             {upcomingGames.map((game, index) => (
-              <Card key={index} className="bg-gray-900 border-team-silver/20 hover:border-primary/50 transition-all duration-300">
+              <Card key={index} className="bg-gray-900 border-team-green/20 hover:border-primary/50 transition-all duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
@@ -124,7 +124,7 @@ const Index = () => {
                         <div className="font-oswald text-2xl font-bold text-primary">{game.date}</div>
                         <div className="text-sm text-gray-400">{game.time}</div>
                       </div>
-                      <div className="h-12 w-px bg-team-silver/30"></div>
+                      <div className="h-12 w-px bg-team-green/30"></div>
                       <div>
                         <div className="font-oswald text-xl font-bold">vs {game.opponent}</div>
                         <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -156,7 +156,7 @@ const Index = () => {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {jerseys.map((jersey, index) => (
-              <Card key={index} className="bg-black/50 border-team-silver/20 overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105">
+              <Card key={index} className="bg-black/50 border-team-green/20 overflow-hidden hover:border-primary/50 transition-all duration-300 hover:scale-105">
                 <div className="aspect-square bg-gray-800 relative overflow-hidden">
                   <img 
                     src={jersey.image} 
@@ -187,7 +187,7 @@ const Index = () => {
             ПОСЛЕДНИЕ НОВОСТИ
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <Card className="bg-black/50 border-team-silver/20 hover:border-primary/50 transition-all duration-300">
+            <Card className="bg-black/50 border-team-green/20 hover:border-primary/50 transition-all duration-300">
               <CardContent className="p-6">
                 <Badge className="mb-3 bg-primary/20 text-primary border-none">Победа</Badge>
                 <h3 className="font-oswald text-xl font-bold mb-3">Разгромная победа над Торпедо 5:1</h3>
@@ -202,7 +202,7 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-black/50 border-team-silver/20 hover:border-primary/50 transition-all duration-300">
+            <Card className="bg-black/50 border-team-green/20 hover:border-primary/50 transition-all duration-300">
               <CardContent className="p-6">
                 <Badge className="mb-3 bg-blue-500/20 text-blue-400 border-none">Трансфер</Badge>
                 <h3 className="font-oswald text-xl font-bold mb-3">Подписан новый нападающий</h3>
@@ -230,17 +230,17 @@ const Index = () => {
             <div className="flex flex-col items-center">
               <Icon name="MapPin" size={32} className="text-primary mb-4" />
               <h3 className="font-oswald text-lg font-bold mb-2">АДРЕС</h3>
-              <p className="text-gray-400 font-roboto">Ледовый дворец<br />ул. Спортивная, 15</p>
+              <p className="text-gray-400 font-roboto">Ледовая арена "Тюмень"<br />ул. Первомайская, 58</p>
             </div>
             <div className="flex flex-col items-center">
               <Icon name="Phone" size={32} className="text-primary mb-4" />
               <h3 className="font-oswald text-lg font-bold mb-2">ТЕЛЕФОН</h3>
-              <p className="text-gray-400 font-roboto">+7 (495) 123-45-67</p>
+              <p className="text-gray-400 font-roboto">+7 (3452) 45-67-89</p>
             </div>
             <div className="flex flex-col items-center">
               <Icon name="Mail" size={32} className="text-primary mb-4" />
               <h3 className="font-oswald text-lg font-bold mb-2">EMAIL</h3>
-              <p className="text-gray-400 font-roboto">info@hockey-team.ru</p>
+              <p className="text-gray-400 font-roboto">info@gazoviktyumen.ru</p>
             </div>
           </div>
           <div className="flex justify-center gap-4">
